@@ -24,8 +24,7 @@ public class LancamentoServiceImpl implements LancamentoService{
 	
 	public LancamentoServiceImpl(LancamentoRepository repository) {
 		
-		this.repository = repository;
-		
+		this.repository = repository;		
 	}
 
 	@Override
@@ -83,7 +82,7 @@ public class LancamentoServiceImpl implements LancamentoService{
 			throw new RegraNegocioException("Informe um Ano válido.");
 		}
 		
-		if(lancamento.getUsuario() == null || lancamento.getId() == null) {
+		if(lancamento.getUsuario() == null || lancamento.getUsuario().getId() == null) {
 			throw new RegraNegocioException("Informe um Usuario.");
 		}
 		

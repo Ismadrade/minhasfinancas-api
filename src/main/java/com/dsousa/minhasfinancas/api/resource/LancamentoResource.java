@@ -27,7 +27,7 @@ import com.dsousa.minhasfinancas.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("api/lancamentos")
+@RequestMapping("/api/lancamentos")
 @RequiredArgsConstructor //cria um contrutor com os argumentos obrigatorios para os obj q terminam com final
 public class LancamentoResource {
 	
@@ -129,6 +129,7 @@ public class LancamentoResource {
 		.orElseThrow(() -> new RegraNegocioException("Usuario não encontrado para o id informado."));
 		
 		lancamento.setUsuario(usuario);
+		
 		if(dto.getTipo() != null) {
 			lancamento.setTipo(TipoLancamento.valueOf(dto.getTipo()));			
 		}
